@@ -1,0 +1,89 @@
+<form name="userSignupForm" ng-submit="userRegister(userSignupForm.$valid)" role="form" novalidate>
+	<div class="form-group">
+		<label for="userFirstName">First Name *</label>
+		<input type="text" class="form-control" name="userFirstName" placeholder="First Name" required ng-model="user.firstName">
+		<p ng-show="userSignupForm.userFirstName.$invalid && !userSignupForm.$pristine && submitted" class="help-block">Required</p>
+	</div>
+
+	<div class="form-group">
+		<label for="userLastName">Last Name *</label>
+		<input type="text" class="form-control" name="userLastName" placeholder="Last Name"  ng-model="user.lastName" required>
+		<p ng-show="userSignupForm.userLastName.$invalid && !userSignupForm.$pristine && submitted" class="help-block">Required</p>
+	</div>
+
+	<div class="form-group">
+		<label for="userDOB">Date Of Birth *</label>
+		<input type="date" class="form-control" id="userDOB" name="userDOB" ng-model="user.dob" required/>
+		<p ng-show="userSignupForm.userDOB.$invalid && !userSignupForm.$pristine && submitted" class="help-block">Required</p>
+	</div>
+
+	<div class="form-group">
+		<label for="userGender">Gender *</label>
+		<select class="form-control" id="userGender" name="userGender" ng-model="user.gender" required>
+			<option value="female">Female</option>
+			<option value="male">Male</option>
+		</select>
+		<p ng-show="userSignupForm.userGender.$invalid && !userSignupForm.$pristine && submitted" class="help-block">Required</p>
+	</div>
+
+	<div class="form-group">
+		<label for="userAddressLine1">Address Line 1 *</label>
+		<input type="text" class="form-control" id="userAddressLine1" name="userAddressLine1" placeholder="Address Line 1"  ng-model="user.addressLine1" required/>
+		<p ng-show="userSignupForm.userAddressLine1.$invalid && !userSignupForm.$pristine && submitted" class="help-block">Required</p>
+	</div>
+
+	<div class="form-group">
+		<label for="userAddressLine2">Address Line 2</label>
+		<input type="text" class="form-control" id="userAddressLine2" placeholder="Address Line 2" ng-model="user.addressLine2"/>
+	</div>
+
+	<div class="form-group">
+		<label for="userCity">City *</label>
+		<input type="text" class="form-control" id="userCity" name="userCity" placeholder="City"  ng-model="user.city" required/>
+		<p ng-show="userSignupForm.userCity.$invalid && !userSignupForm.$pristine && submitted" class="help-block">Required</p>
+	</div>
+
+	<div class="form-group">
+		<label for="userCounty">County *</label>
+		<input type="text" class="form-control" id="userCounty" name="userCounty" placeholder="County"  ng-model="user.county" required/>
+		<p ng-show="userSignupForm.userCounty.$invalid && !userSignupForm.$pristine && submitted" class="help-block">Required</p>
+	</div>
+
+	<!--<div class="form-group">
+		<label for="userCountry">Country</label>
+		<input type="text" class="form-control" id="userCountry" placeholder="Country"/>
+	</div>-->
+
+	<div class="form-group">
+		<label for="userGym">Gym (Optional)</label>
+		<input type="text" class="form-control" id="userGym" placeholder="Gym" ng-model="user.gym"/>
+	</div>
+
+	<div class="form-group">
+		<label for="userEmail">Email Address *</label>
+		<input type="email" class="form-control" id="userEmail" name="userEmail" placeholder="Email Address"  ng-model="user.email" required/>
+		<p ng-show="userSignupForm.userEmail.$error.required && !userSignupForm.$pristine && submitted" class="help-block">Required</p>
+		<p ng-show="DUPLICATE_EMAIL && submitted" class="help-block">Email address already registered as a user.</p>
+		<p ng-show="userSignupForm.userEmail.$error.email && !userSignupForm.$pristine && submitted" class="help-block">Not a valid email.</p>
+
+	</div>	
+
+	<div class="form-group">
+		<label for="userPassword">Password *</label>
+		<input type="password" class="form-control" id="userPassword" name="userPassword" placeholder="Password"  ng-model="user.password" required ng-minlength="6"/>
+		<p ng-show="userSignupForm.userPassword.$error.required && !userSignupForm.$pristine && submitted" class="help-block">Required</p>
+		<p ng-show="userSignupForm.userPassword.$error.minlength && submitted" class="help-block">Password must be at least 6 characters in length.</p>
+	</div>
+
+	<div class="form-group">
+		<label for="userPasswordCopy">Repeat Password *</label>
+		<input type="password" class="form-control" id="userPasswordCopy" name="userPasswordCopy" placeholder="Repeat Password"  ng-model="user.passwordCopy" required/>
+		<p ng-show="userSignupForm.userPasswordCopy.$invalid && !userSignupForm.$pristine && submitted" class="help-block">Required</p>
+		<p ng-show="passwordNoMatch && submitted" class="help-block">Passwords do not match</p>
+	</div>
+
+	<div class="form-group">
+		<button type="submit" class="btn" id="registerUser">Register</button>
+	</div>
+
+</form>
