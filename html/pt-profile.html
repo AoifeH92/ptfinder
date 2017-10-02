@@ -1,1 +1,13 @@
-PERSONAL TRAINER PROFILE
+<div ng-init="fetchProfileData()">
+
+Name: {{profileData.firstname}} {{profileData.lastname}}<br/>
+Based in: {{profileData.city}}, {{profileData.county}}<br/>
+Age: {{profileData.dob | ageFilter}}<br/>
+Contact:<br/>
+Email: {{profileData.email}}
+Phone: {{profileData.phone}}
+
+<br/><br/>
+Bio: {{profileData.bio}}
+
+</div>

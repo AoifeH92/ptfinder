@@ -11,8 +11,6 @@ app.controller('ptRegisterController', ['$scope', '$filter', '$http', '$location
 	};
 
 	$scope.registerPT = function(isValid){
-		console.log('test');
-		console.log($scope.pt);
 		$scope.submitted = true;
 		$scope.DUPLICATE_EMAIL = false;
 

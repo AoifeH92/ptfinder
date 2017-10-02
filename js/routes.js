@@ -10,13 +10,27 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
 		controller: 'homeController'
 	});
 
+	$routeProvider.when('/pt-login', {
+		templateUrl:'html/login.html',
+		controller:'loginController',
+		stateParams:{type:'pt'}
+	});
+
+	$routeProvider.when('/user-login', {
+		templateUrl:'html/login.html',
+		controller:'loginController',
+		stateParams:{type:'user'}
+	});
+
 	$routeProvider.when('/pt-signup', {
 		templateUrl: 'html/pt-signup.html',
 		controller: 'ptRegisterController'
 	});
 
 	$routeProvider.when('/pt-profile', {
-		templateUrl: 'html/pt-profile.html'
+		templateUrl: 'html/pt-profile.html',
+		controller: 'ptProfileController',
+		stateParams:{id:null}
 	});
 
 	$routeProvider.when('/user-signup', {
@@ -25,7 +39,8 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
 	});
 
 	$routeProvider.when('/user-profile', {
-		templateUrl: 'html/user-profile.html'
+		templateUrl: 'html/user-profile.html',
+		stateParams:{id:null}
 	});
 
 	$routeProvider.otherwise('/home');

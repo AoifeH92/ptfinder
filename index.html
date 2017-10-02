@@ -6,10 +6,15 @@
 		<link rel="stylesheet" type="text/css" href="css/styles.css">
 	</head>
 	<body>
-		<div id="navbar">
+		<div id="navbar" ng-controller="navigationController">
 			<label>Logo</label>
-			<div class="pull-right">
-				Sign Up / Sign In
+			<div class="pull-right" ng-hide="key != null">
+				<a href="#/pt-signup">Trainer Sign Up</a> / <a href="#/pt-login">Trainer Sign In</a><br/>
+				<a href="#/user-signup">User Sign Up</a> / <a href="#/user-login">User Sign In</a>
+			</div>
+			<div class="pull-right" ng-show="key">
+				<label>{{username}}</label>
+				<button type="button" ng-click="signout()">Sign Out</a>
 			</div>
 		</div>
 
@@ -26,11 +31,19 @@
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
 		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-local-storage/0.7.1/angular-local-storage.min.js"></script>
 
+		<script src="controllers/navigationController.js"></script>
 		<script src="controllers/homeController.js"></script>
 		<script src="controllers/userRegisterController.js"></script>
 		<script src="controllers/ptRegisterController.js"></script>
+		<script src="controllers/ptProfileController.js"></script>
+		<script src="controllers/loginController.js"></script>
+
 		<script src="js/routes.js"></script>
+		<script src="js/app-config.js"></script>
+		<script src="js/app-filters.js"></script>
+
 		<script src="js/app.js"></script>
 		
 	</body>

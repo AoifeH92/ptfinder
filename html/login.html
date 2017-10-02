@@ -1,0 +1,14 @@
+<form name="loginForm" ng-submit="login(loginForm.$valid)" role="form" novalidate>
+	<div class-"form-group">
+		<label for="email">Email</label>
+		<input type="email" class="form-control" name="email" placeholder="name@example.com" ng-model="email" required/>
+	</div>
+	<div class="form-group">
+		<label for="password">Password</label>
+		<input type="password" class="form-control" name="password" ng-model="password" required/>
+	</div>
+
+	<div class="form-group">
+		<button type="submit" class="btn" ng-disabled="!loginForm.$valid">Login</button>
+	</div>
+</form>
